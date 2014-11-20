@@ -9,14 +9,16 @@ Gstreamer dependencies
 ============
 
 For .deb distributions:
-* gstreamer−0.10 gstreamer−0_10−dev
-* gstreamer−0.10−fluendo−mp3
-* gstreamer−0.10−plugins−base
-* gstreamer−0.10−plugins−base−dev
+* gstreamer0.10 
+* gstreamer0.10−dev
+* gstreamer0.10−fluendo−mp3
+* gstreamer0.10−plugins−base
+* gstreamer0.10−plugins−base−dev
 
 
 For .rpm distributions
-* gstreamer−0_10 gstreamer−0_10−devel
+* gstreamer−0_10
+* gstreamer−0_10−devel
 * gstreamer−0_10−fluendo−mp3
 * gstreamer−0_10−plugins−base
 * gstreamer−0_10−plugins−base−devel
