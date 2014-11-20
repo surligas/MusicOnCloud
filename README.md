@@ -21,6 +21,12 @@ For .rpm distributions
 * gstreamer−0_10−plugins−base
 * gstreamer−0_10−plugins−base−devel
 
+For Arch OS
+* gstreamer0.10-git
+* gstreamer0.10-base-git
+* gstreamer0.10−fluendo−mp3
+
+
 Testing the dependencies
 ============
 After installing the dependencies of gstreamer check if the test program can be compiled.
