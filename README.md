@@ -21,7 +21,7 @@ For .rpm distributions
 * gstreamer−0_10−plugins−base
 * gstreamer−0_10−plugins−base−devel
 
-Testing the deoendencies
+Testing the dependencies
 ============
 After installing the dependencies of gstreamer check if the test program can be compiled.
 To do that:
