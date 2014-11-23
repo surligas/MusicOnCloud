@@ -23,6 +23,12 @@ For .rpm distributions
 * gstreamer−0_10−plugins−base
 * gstreamer−0_10−plugins−base−devel
 
+For Ubuntu
+* gstreamer0.10
+* libgstreamer0.10−dev
+* gstreamer0.10−fluendo−mp3
+* gstreamer0.10−plugins−base
+
 For Arch OS
 * gstreamer0.10-git
 * gstreamer0.10-base-git
