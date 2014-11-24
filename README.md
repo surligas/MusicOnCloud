@@ -28,6 +28,7 @@ For Ubuntu
 * libgstreamer0.10−dev
 * gstreamer0.10−fluendo−mp3
 * gstreamer0.10−plugins−base
+* libgstreamer-plugins-base0.10-dev 
 
 For Arch OS
 * gstreamer0.10-git
