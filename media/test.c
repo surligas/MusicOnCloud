@@ -30,6 +30,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "mediaplayer.h"
+
 /* FIXME: remove once we depend on GLib >= 2.22 */
 #if !GLIB_CHECK_VERSION (2, 21, 3)
 #define g_mapped_file_unref g_mapped_file_free
@@ -171,6 +173,8 @@ main (int argc, char *argv[])
     g_print ("usage: %s <filename>\n", argv[0]);
     return -1;
   }
+
+  printf("Mp3 bit rate: %lu\n", get_mp3_bit_rate(argv[1]));
 
   /* try to open the file as an mmapped file */
   app->file = g_mapped_file_new (argv[1], FALSE, &error);
