@@ -45,9 +45,15 @@ main(int argc, char **argv)
 	}
 
 	printf("MediaOnCloud Server:\n"
-	       "-->Wathced directory: %s\n"
-	       "-->Listen port: %d\n",
+	       "--> Watched directory: %s\n"
+	       "--> Listen port: %d\n",
 	       watched_dir, listen_port);
 
+	/* Your code starts here */
+
+
+	/* Your code ends here */
+
+	free(watched_dir);
 	return 0;
 }

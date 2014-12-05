@@ -174,8 +174,6 @@ main (int argc, char *argv[])
     return -1;
   }
 
-  printf("Mp3 bit rate: %lu\n", get_mp3_bit_rate(argv[1]));
-
   /* try to open the file as an mmapped file */
   app->file = g_mapped_file_new (argv[1], FALSE, &error);
   if (error) {

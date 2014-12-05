@@ -5,8 +5,14 @@ CC := gcc
 CFLAGS := -Wall -g
 LDFLAGS := -lpthread
 
+GSTREAMER_FLAGS = `pkg-config --cflags gstreamer-0.10 gstreamer-app-0.10`
+GSTREAMER_LD_LIBS = `pkg-config --libs gstreamer-0.10 gstreamer-app-0.10`
+
 export CC
 export CFLAGS
+
+export GSTREAMER_FLAGS
+export GSTREAMER_LD_LIBS
 
 all: mocserver mocclient
 
@@ -24,7 +30,8 @@ mocserver: server.c music_on_cloud.h
 	$(CC) $(CFLAGS) $(LDFLAGS) -o mocserver server.c
 
 mocclient: client.c music_on_cloud.h
-	$(CC) $(CFLAGS) $(LDFLAGS) -o mocclient client.c
+	$(MAKE) -C media mediaplayer.o
+	$(CC) $(CFLAGS) $(LDFLAGS) $(GSTREAMER_FLAGS) -o mocclient client.c media/mediaplayer.o $(GSTREAMER_LD_LIBS)
 
 clean:
 	$(MAKE) -C media $@

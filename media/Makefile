@@ -10,4 +10,5 @@ test: test.c mediaplayer.o
 	$(CC) $(CFLAGS) $(GSTREAMER_FLAGS) -o test test.c mediaplayer.o $(GSTREAMER_LD_LIBS)
 
 clean:
+	@rm -fv mediaplayer.o
 	@rm -fv test

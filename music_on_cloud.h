@@ -8,6 +8,15 @@
 #ifndef MUSIC_ON_CLOUD_H_
 #define MUSIC_ON_CLOUD_H_
 
+
+/**
+ * The buffer size, for each packet received.
+ *
+ * NOTE: You can change it to your needs.
+ */
+#define BUFFER_SIZE 512
+
+
 /**
  * This is the type of the media files that are transfered
  * through network.
@@ -26,5 +35,14 @@ typedef enum e_media_type {
 	/* You can add your own here!! */
 	UNSUPPORTED = 0xFFFF//!< UNSUPPORTED for unsupported media files
 } media_t;
+
+typedef enum command_type {
+	LS = 0x00FF0000,
+	PLAY = 0x00FF0001,
+	UPLOAD = 0x00FF0002,
+	DOWNLOAD = 0x00FF0003,
+	STOP = 0x00FF0004,
+	GENERAL_ERROR = 0x00FFFFFF
+} command_t;
 
 #endif /* MUSIC_ON_CLOUD_H_ */

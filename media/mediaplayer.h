@@ -23,6 +23,31 @@
  * Hopefully most Linux distributions have already installed it.
  *
  */
+
+struct stream_info
+{
+	GstElement *playbin;
+	GstElement *appsrc;
+	GMainLoop *loop;
+
+	int socket;
+};
+
+void
+init_mediaplayer();
+
+void
+free_mediaplayer();
+
+size_t
+get_mp3_bit_rate(const char *filename);
+
+size_t
+get_flac_bit_rate(const char *filename);
+
+
+/* !!! NOTE: Do not edit below !!!*/
+
 #define MPEGv1 3
 #define MPEGv2 2
 #define MPEGv2_1 0
@@ -49,16 +74,6 @@ _mp3_bit_rates[16][5] = {
 	{448, 	384, 	320, 	256, 	160},
 	{0, 	0, 	0, 	0, 	0}
 };
-
-void
-init_mediaplayer();
-
-void
-free_mediaplayer();
-
-size_t
-get_mp3_bit_rate(const char *filename);
-
 
 
 #endif /* MEDIA_MEDIAPLAYER_H_ */
