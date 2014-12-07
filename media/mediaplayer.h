@@ -10,6 +10,7 @@
 
 #include <gst/gst.h>
 #include <stdint.h>
+#include "../music_on_cloud.h"
 
 /**
  * @file mediaplayer.h
@@ -24,20 +25,33 @@
  *
  */
 
-struct stream_info
+/**
+ * A struct containing many fields related with the GStreamer, network, etc
+ */
+typedef struct stream_info
 {
-	GstElement *playbin;
-	GstElement *appsrc;
-	GMainLoop *loop;
+	/* Gstreamer related. Do not edit!*/
+	GstElement 	*playbin;
+	GstElement 	*appsrc;
+	GMainLoop 	*loop;
+	guint 		sourceid;        /**< To control the GSource */
 
-	int socket;
-};
+	/* Misc and network related fields */
+	uint8_t		network_stream;	/**< True if the player should play from network,
+	 	 	 	 	  * false for local file play
+	 	 	 	 	  */
+	char		*filename;	/**< The filename of the file to play */
+	FILE		*fp;		/**< File descriptor of the file to play */
+	int 		stream_socket;	/**< The UDP socket descriptor */
+
+	/* Add your own fields if necessary!*/
+} stream_info_t;
 
 void
 init_mediaplayer();
 
 void
-free_mediaplayer();
+start_mediaplayer(stream_info_t *sinfo);
 
 size_t
 get_mp3_bit_rate(const char *filename);

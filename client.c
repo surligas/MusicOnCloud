@@ -24,6 +24,9 @@ main(int argc, char **argv)
 	char 		*server_IP;
 	char 		*media_dir;
 
+	/* Necessary for the player!!*/
+	stream_info_t 	info;
+
 	/* A very easy way to parse command line arguments */
 	while ((opt = getopt(argc, argv, "hs:p:d:")) != -1) {
 		switch (opt)
@@ -59,10 +62,26 @@ main(int argc, char **argv)
 	       server_listen_port,
 	       media_dir);
 
+	/* Initialize the Gstreamer */
+	init_mediaplayer();
+
 	/* Your code starts here */
 
 
 	/* Your code ends here */
+
+	/*
+	 * EXAMPLE: If you like to play a *local* file the following
+	 * should be enough:
+	 *
+	 */
+
+	/* Choose local file */
+	//info.network_stream = 0;
+	/* Set filename and path */
+	//info.filename = "/home/surligas/test.mp3";
+	/* Play it!!! */
+	//start_mediaplayer(&info);
 
 	free(server_IP);
 	free(media_dir);

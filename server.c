@@ -12,6 +12,7 @@
 #include <errno.h>
 
 #include "music_on_cloud.h"
+#include "media/mediaplayer.h"
 
 
 int

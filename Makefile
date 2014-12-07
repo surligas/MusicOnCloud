@@ -26,10 +26,11 @@ all: mocserver mocclient
 test:
 	$(MAKE) -C media $@
 
-mocserver: server.c music_on_cloud.h
-	$(CC) $(CFLAGS) $(LDFLAGS) -o mocserver server.c
+mocserver: server.c music_on_cloud.h media/mediaplayer.c media/mediaplayer.h
+	$(MAKE) -C media mediaplayer.o
+	$(CC) $(CFLAGS) $(LDFLAGS) $(GSTREAMER_FLAGS) -o mocserver server.c media/mediaplayer.o $(GSTREAMER_LD_LIBS)
 
-mocclient: client.c music_on_cloud.h
+mocclient: client.c music_on_cloud.h media/mediaplayer.c media/mediaplayer.h
 	$(MAKE) -C media mediaplayer.o
 	$(CC) $(CFLAGS) $(LDFLAGS) $(GSTREAMER_FLAGS) -o mocclient client.c media/mediaplayer.o $(GSTREAMER_LD_LIBS)
 
